@@ -25,14 +25,8 @@ interface ICard {
 }
 
 const getCoinById = async (id: string): Promise<ICard> => {
-  try {
-    const response = await fetch(
-      `https://api.coingecko.com/api/v3/coins/${id}`,
-    );
-    return await response.json();
-  } catch (error) {
-    console.error("error na requisiçao", error);
-  }
+  const response = await fetch(`https://api.coingecko.com/api/v3/coins/${id}`);
+  return await response.json();
 };
 
 const CardPage = async ({ params: { coin } }: { params: { coin: string } }) => {
