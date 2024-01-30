@@ -32,7 +32,7 @@ const getCoinById = async (id: string): Promise<ICard> => {
 const CardPage = async ({ params: { coin } }: { params: { coin: string } }) => {
   const moeda = await getCoinById(coin);
 
-  const trustScoreColors = {
+  const trustScoreColors: { [key: string]: string } = {
     green: "text-green-500",
     yellow: "text-yellow-500",
     red: "text-red-500",
