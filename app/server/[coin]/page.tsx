@@ -44,7 +44,7 @@ const CardPage = async ({ params: { coin } }: { params: { coin: string } }) => {
       : "unknown";
 
   const getTrustScoreColor = (score: string) =>
-    trustScoreColors[score] || "text-gray-500";
+    (trustScoreColors as { [key: string]: string })[score] || "text-gray-500";
 
   return (
     <>
